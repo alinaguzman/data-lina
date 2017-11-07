@@ -1,0 +1,14 @@
+<% @runs.each do |run| %>
+  <p>
+    <%= run.name %> <br>
+    <%= run.race %> <br>
+    <%= run.miles %> <br>
+    <%= run.finish %> <br>
+    <%= run.pace %> <br>
+    <%= run.description %> <br>
+    <%= run.strava %> <br>
+    <%= link_to 'Edit', edit_run_path(run) %>
+  </p>
+  <hr>
+
+<% end %>

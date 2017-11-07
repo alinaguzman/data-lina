@@ -1,0 +1,14 @@
+<% @checkins.each do |swarm_checkin| %>
+  <p>
+    <%= swarm_checkin.json %> <br>
+    <%= swarm_checkin.name %> <br>
+    <%= swarm_checkin.created_at %> <br>
+    <%= swarm_checkin.venue %> <br>
+    <%= swarm_checkin.name %> <br>
+    <%= swarm_checkin.location %> <br>
+    <%= swarm_checkin.address %> <br>
+    <%= swarm_checkin.city %> <br>
+    <%= swarm_checkin.category %> <br>
+    <%= link_to 'Save this checkin', new_checkin_path %>
+  </p>
+<% end %>

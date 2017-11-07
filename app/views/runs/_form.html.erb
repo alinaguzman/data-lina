@@ -1,0 +1,46 @@
+<%= link_to 'Home', root_path %>
+<%= link_to 'Runs', runs_path %>
+
+<%= form_for @run do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :date %><br>
+    <%= f.date_field :date %>
+  </p>
+
+  <p>
+    <%= f.label :race %><br>
+    <%= f.check_box :race %>
+  </p>
+  <p>
+    <%= f.label :miles %><br>
+    <%= f.text_field :miles %>
+  </p>
+  <p>
+    <%= f.label :finish %><br>
+    <%= f.text_field :finish %>
+  </p>
+  <p>
+    <%= f.label :pace %><br>
+    <%= f.text_field :pace %>
+  </p>
+  <p>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.label :strava %>
+    <%= f.text_field :strava %>
+  </p>
+  <p>
+    <%= f.label :activity_id %>
+    <%= f.text_field :activity_id %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

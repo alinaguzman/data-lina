@@ -1,0 +1,27 @@
+<nav class="uk-navbar-container" uk-navbar>
+  <div class="uk-navbar-left">
+
+    <ul class="uk-navbar-nav">
+      <li>
+        <a href="#">Runs</a>
+        <div class="uk-navbar-dropdown">
+          <ul class="uk-nav uk-navbar-dropdown-nav">
+            <li><%= link_to 'Manual Run Entry', new_run_path %></li>
+            <li><%= link_to 'Run Data', runs_path %></li>
+            <li><%= link_to 'Strava Runs', strava_runs_path %></li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <a href="#">Checkins</a>
+        <div class="uk-navbar-dropdown">
+          <ul class="uk-nav uk-navbar-dropdown-nav">
+            <li><%= link_to 'Swarm Checkins', swarm_checkins_path %></li>
+          </ul>
+        </div>
+      </li>
+      <li><a href="#">Item</a></li>
+    </ul>
+
+  </div>
+</nav>
