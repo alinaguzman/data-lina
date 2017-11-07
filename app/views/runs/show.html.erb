@@ -6,6 +6,7 @@
 <%= @run.description %> <br>
 <a href="<%= @run.strava %>">Strava Activity</a> <br>
 <%= link_to 'Edit this run', edit_run_path(@run) %>
+<%= link_to 'Destroy',  { action: :destroy, id: @run.id }, method: :delete %>
 
 
 

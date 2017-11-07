@@ -10,21 +10,20 @@ class RunsController < ApplicationController
   end
 
   def strava_index
+    @activites = @client.list_athlete_activities.map{|act| StravaUtils.new(act)}
   end
 
   def show
   end
 
   def new
-    activity ||= @client.retrieve_an_activity(params['activity_id'])
+    activity ||= StravaUtils.new(@client.retrieve_an_activity(params['activity_id']))
     if params['activity_id']
-      @run = Run.new(
-          activity_id: params[:activity_id],
-          name: activity['name'],
-          miles: activity['distance'],
-          finish: activity['elapsed_time'],
-          date: activity['start_date_local']
-      )
+      @run = Run.new(activity_id: activity.id,
+                     name: activity.name,
+                     miles: activity.miles,
+                     finish: activity.elapsed_time,
+                     date: activity.date)
     else
       @run = Run.new
     end

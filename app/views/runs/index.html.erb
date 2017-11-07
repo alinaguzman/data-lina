@@ -1,13 +1,15 @@
 <% @runs.each do |run| %>
   <p>
     <%= run.name %> <br>
-    <%= run.race %> <br>
-    <%= run.miles %> <br>
-    <%= run.finish %> <br>
-    <%= run.pace %> <br>
+    <%= run.date.strftime('%B %d, %Y') %> <br>
+    <%= run.race ? 'Race' : 'Training Run' %> <br>
+    <%= run.miles %> miles<br>
+    <%= run.finish %> total time<br>
+    <%= run.pace %> pace<br>
     <%= run.description %> <br>
-    <%= run.strava %> <br>
+    <%= link_to 'Strava Link', run.strava %> <br>
     <%= link_to 'Edit', edit_run_path(run) %>
+    <%= link_to 'Destroy',  { action: :destroy, id: run.id }, method: :delete %>
   </p>
   <hr>
 

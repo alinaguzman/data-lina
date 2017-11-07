@@ -11,7 +11,7 @@ class SwarmCheckin
   end
 
   def created_at
-    Time.at(@json['createdAt'].to_i)
+    Time.at(@json['createdAt']).strftime('%B %d, %Y')
   end
 
   def venue

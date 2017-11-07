@@ -1,11 +1,11 @@
-<% @client.list_athlete_activities.each do |activity| %>
+<% @activites.each do |activity| %>
   <p>
-    <%= activity['name'] %> <br>
-    <%= activity['distance'] %> <br>
-    <%= activity['elapsed_time'] %> <br>
-    <%= activity['start_date_local'] %> <br>
-    <%= link_to 'Save this activity', new_run_path(activity_id: activity['id']) %> <br>
-    Payload: <%= activity %> <br>
+    <%= activity.name %> <br>
+    <%= activity.miles %> miles<br>
+    <%= activity.elapsed_time %> total time<br>
+    <%= activity.date %> <br>
+    <%= link_to 'Save this activity', new_run_path(activity_id: activity.id) %> <br>
+    <%= activity.payload %> <br>
   </p>
   <hr>
 
