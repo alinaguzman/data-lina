@@ -10,7 +10,7 @@ class RunsController < ApplicationController
   end
 
   def strava_index
-    @activites = @client.list_athlete_activities.map{|act| StravaUtils.new(act)}
+    @activites ||= @client.list_athlete_activities.map {|act| StravaUtils.new(act)}
   end
 
   def show
@@ -36,6 +36,7 @@ class RunsController < ApplicationController
   def create
     @run = Run.new(run_params)
     if @run.save
+      CreateDatum.new(@run).execute
       redirect_to @run, notice: 'Run was successfully created.'
     else
       render :new
@@ -55,11 +56,12 @@ class RunsController < ApplicationController
   end
 
   def destroy
-    @run.destroy
-    respond_to do |format|
-      format.html { redirect_to runs_url, notice: 'Run was successfully destroyed.' }
-      format.json { head :no_content }
+    datum = Datum.find_entry(@run)
+    Run.transaction do
+      @run.destroy
+      datum.destroy
     end
+    redirect_to runs_url, notice: 'Run was successfully destroyed.'
   end
 
   private

@@ -6,7 +6,8 @@
     <%= swarm_checkin.address %> <br>
     <%= swarm_checkin.city %> <br>
     <%= swarm_checkin.category %> <br>
-    <%= swarm_checkin.json %> <br>
+    <span uk-toggle="target: .toggle-usage">Payload toggle</span>
+    <span class="toggle-usage"><%= swarm_checkin.json %></span>
   </p>
   <hr>
 <% end %>

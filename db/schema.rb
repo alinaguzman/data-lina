@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171107171215) do
+ActiveRecord::Schema.define(version: 20171108170647) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,14 @@ ActiveRecord::Schema.define(version: 20171107171215) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "data", force: :cascade do |t|
+    t.string "klass"
+    t.datetime "date"
+    t.integer "foreign_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "runs", force: :cascade do |t|
     t.boolean "race"
     t.string "name"
@@ -37,6 +45,20 @@ ActiveRecord::Schema.define(version: 20171107171215) do
     t.string "strava"
     t.datetime "date"
     t.string "activity_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "wines", force: :cascade do |t|
+    t.string "grapes"
+    t.string "winery"
+    t.string "year"
+    t.string "region"
+    t.integer "rating"
+    t.string "description"
+    t.datetime "date"
+    t.string "purchased"
+    t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
