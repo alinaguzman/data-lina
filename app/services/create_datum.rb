@@ -9,7 +9,7 @@ class CreateDatum
   def execute
     datum = Datum.create(klass: entry.class.name, foreign_id: entry.id, date: entry.date)
     unless datum.valid?
-      puts "*** Entry datum callback failed: #{entry.inspect}"
+      puts "*** Entry datum create callback failed: #{entry.inspect}"
     end
   end
 
