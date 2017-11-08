@@ -1,6 +1,7 @@
 require 'strava/api/v3'
 
 class RunsController < ApplicationController
+  before_action :admin_required
   before_action :set_run, only: [:show, :edit, :update, :destroy]
   before_action :set_strava_client, only: [:strava_index, :new]
 

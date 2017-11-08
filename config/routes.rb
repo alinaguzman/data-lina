@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
   root :to => 'data#index'
+  get 'login', to: 'sessions#new', as: 'login'
+  get 'logout', to: 'sessions#destroy', as: 'logout'
+  resources :sessions, only: [:create]
+
   scope '/data' do
     resources :runs
     get 'strava/runs', to: 'runs#strava_index'

@@ -1,6 +1,7 @@
 class CheckinsController < ApplicationController
   before_action :set_checkin, only: [:show, :edit, :update, :destroy]
   before_action :set_swarm_client, only: [:swarm_index, :new]
+  before_action :admin_required
 
   def swarm_index
     @checkins = @client.checkins

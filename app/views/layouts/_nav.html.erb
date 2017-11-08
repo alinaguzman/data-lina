@@ -35,4 +35,15 @@
     </ul>
 
   </div>
+  <div class="uk-navbar-right">
+
+    <ul class="uk-navbar-nav">
+      <% if logged_in? %>
+        <li><%= link_to 'Logout', logout_path %></li>
+      <% else %>
+        <li><%= link_to 'Log In', login_path %></li>
+      <% end %>
+    </ul>
+
+  </div>
 </nav>
