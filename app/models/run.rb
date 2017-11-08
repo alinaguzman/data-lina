@@ -1,5 +1,5 @@
 class Run < ApplicationRecord
 
-  validates :date, presence: true
+  validates_presence_of :date, :miles, :finish, :name
 
 end
