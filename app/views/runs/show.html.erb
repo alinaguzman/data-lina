@@ -1,4 +1,6 @@
+<p id="notice"><%= notice %></p>
+
 <%= render partial: 'run', locals: {run: @run} %>
 <a href="<%= @run.strava %>">Strava Activity</a> <br>
-<%= link_to 'Edit this run', edit_run_path(@run) %>
+<%= link_to 'Edit', edit_run_path(@run) %> |
 <%= link_to 'Destroy',  { action: :destroy, id: @run.id }, method: :delete %>

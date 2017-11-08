@@ -19,4 +19,9 @@ class Foursquare
      end
   end
 
+  def checkin(checkin_id)
+    response = self.class.get("/checkins/#{checkin_id}", @options)
+    SwarmCheckin.new(response['response']['checkin'])
+  end
+
 end

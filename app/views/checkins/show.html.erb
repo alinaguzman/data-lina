@@ -1,0 +1,5 @@
+<p id="notice"><%= notice %></p>
+
+<%= render partial: 'checkin', locals: {checkin: @checkin} %>
+<%= link_to 'Edit', edit_checkin_path(@checkin) %> |
+<%= link_to 'Destroy',  { action: :destroy, id: @checkin.id }, method: :delete %>

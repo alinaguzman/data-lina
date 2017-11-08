@@ -1,6 +1,6 @@
 <% @checkins.each do |swarm_checkin| %>
   <p>
-    <%= link_to 'Save this checkin', new_checkin_path %> <br>
+    <%= link_to 'Save this checkin', new_checkin_path(swarm_id: swarm_checkin.id) %> <br>
     <%= swarm_checkin.name %> <br>
     <%= swarm_checkin.created_at %> <br>
     <%= swarm_checkin.address %> <br>

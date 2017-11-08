@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20171108170647) do
 
   create_table "checkins", force: :cascade do |t|
     t.string "name"
-    t.string "type"
+    t.string "category"
     t.datetime "date"
     t.jsonb "payload"
     t.string "address"

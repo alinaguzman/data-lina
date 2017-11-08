@@ -38,11 +38,12 @@ class WinesController < ApplicationController
   end
 
   def destroy
-    @wine.destroy
-    respond_to do |format|
-      format.html { redirect_to wines_url, notice: 'Wine was successfully destroyed.' }
-      format.json { head :no_content }
+    datum = Datum.find_entry(@wine)
+    Wine.transaction do
+      @wine.destroy
+      datum.destroy
     end
+    redirect_to runs_url, notice: 'Wine was successfully destroyed.'
   end
 
   private

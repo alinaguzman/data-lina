@@ -1,0 +1,36 @@
+<%= link_to 'Home', root_path %>
+<%= link_to 'Checkins', checkins_path %>
+
+<%= form_for @checkin do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :date %><br>
+    <%= f.date_field :date %>
+  </p>
+  <p>
+    <%= f.label :category %><br>
+    <%= f.text_field :category %>
+  </p>
+  <p>
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </p>
+  <p>
+    <%= f.label :city %><br>
+    <%= f.text_field :city %>
+  </p>
+  <p>
+    <%= f.label :swarm_id %>
+    <%= f.text_field :swarm_id %>
+  </p>
+  <p>
+    <%= f.label :payload %>
+    <%= f.text_area :payload %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
