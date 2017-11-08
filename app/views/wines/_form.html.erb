@@ -12,15 +12,17 @@
   <% end %>
 
   <p>
-    <%= f.label :varietal %><br>
-    <%= f.text_field :varietal %>
+    <%= f.label :grapes %><br>
+    <%= f.text_field :grapes %>
   </p>
-
+  <p>
+    <%= f.label :winery %><br>
+    <%= f.text_field :winery %>
+  </p>
   <p>
     <%= f.label :date %><br>
     <%= f.date_field :date %>
   </p>
-
   <p>
     <%= f.label :year %><br>
     <%= f.text_field :year %>
@@ -45,7 +47,6 @@
     <%= f.label :location %>
     <%= f.text_field :location %>
   </p>
-
   <div class="actions">
     <%= f.submit %>
   </div>

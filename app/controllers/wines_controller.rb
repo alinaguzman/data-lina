@@ -17,15 +17,11 @@ class WinesController < ApplicationController
 
   def create
     @wine = Wine.new(wine_params)
-
-    respond_to do |format|
-      if @wine.save
-        format.html { redirect_to @wine, notice: 'Wine was successfully created.' }
-        format.json { render :show, status: :created, location: @wine }
-      else
-        format.html { render :new }
-        format.json { render json: @wine.errors, status: :unprocessable_entity }
-      end
+    if @wine.save
+      CreateDatum.new(@wine).execute
+      redirect_to @wine, notice: 'Wine was successfully created.'
+    else
+      render :new
     end
   end
 
@@ -50,11 +46,11 @@ class WinesController < ApplicationController
   end
 
   private
-    def set_wine
-      @wine = Wine.find(params[:id])
-    end
+  def set_wine
+    @wine = Wine.find(params[:id])
+  end
 
-    def wine_params
-      params.require(:wine).permit(:varietal, :year, :region, :rating, :description, :date, :purchased, :location)
-    end
+  def wine_params
+    params.require(:wine).permit(:grapes, :winery, :year, :region, :rating, :description, :date, :purchased, :location)
+  end
 end
