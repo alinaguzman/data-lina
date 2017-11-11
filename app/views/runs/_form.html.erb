@@ -1,4 +1,4 @@
-<%= link_to 'Home', root_path %>
+<%= link_to 'Home', root_path %> |
 <%= link_to 'Runs', runs_path %>
 
 <%= form_for @run do |f| %>
@@ -6,12 +6,10 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </p>
-
   <p>
     <%= f.label :date %><br>
     <%= f.date_field :date %>
   </p>
-
   <p>
     <%= f.label :race %><br>
     <%= f.check_box :race %>
@@ -29,15 +27,15 @@
     <%= f.text_field :pace %>
   </p>
   <p>
-    <%= f.label :description %>
+    <%= f.label :description %><br>
     <%= f.text_field :description %>
   </p>
   <p>
-    <%= f.label :strava %>
+    <%= f.label :strava %><br>
     <%= f.text_field :strava %>
   </p>
   <p>
-    <%= f.label :activity_id %>
+    <%= f.label :activity_id %><br>
     <%= f.text_field :activity_id %>
   </p>
   <p>

@@ -1,4 +1,4 @@
-<%= link_to 'Home', root_path %>
+<%= link_to 'Home', root_path %> |
 <%= link_to 'Checkins', checkins_path %>
 
 <%= form_for @checkin do |f| %>
@@ -23,11 +23,11 @@
     <%= f.text_field :city %>
   </p>
   <p>
-    <%= f.label :swarm_id %>
+    <%= f.label :swarm_id %><br>
     <%= f.text_field :swarm_id %>
   </p>
   <p>
-    <%= f.label :payload %>
+    <%= f.label :payload %><br>
     <%= f.text_area :payload %>
   </p>
   <p>

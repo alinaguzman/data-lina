@@ -1,17 +1,32 @@
-<%= form_with(model: sale, local: true) do |form| %>
-  <% if sale.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(sale.errors.count, "error") %> prohibited this sale from being saved:</h2>
+<%= link_to 'Home', root_path %> |
+<%= link_to 'Sales', sales_path %>
 
-      <ul>
-      <% sale.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+<%= form_for @sale do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :date %><br>
+    <%= f.date_field :date %>
+  </p>
+  <p>
+    <%= f.label :app %><br>
+    <%= f.select :app, %w'Poshmark Mercari' %>
+  </p>
+  <p>
+    <%= f.label :earnings %><br>
+    <%= f.text_field :earnings %>
+  </p>
+  <p>
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </p>
+  <p>
+    <%= f.label :description %> <br>
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
 <% end %>

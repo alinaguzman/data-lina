@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :checkins
     get 'swarm/checkins', to: 'checkins#swarm_index'
     resources :wines
+    resources :sales
   end
 
 end
