@@ -1,0 +1,53 @@
+<%= form_with(model: book, local: true) do |f| %>
+  <% if book.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(book.errors.count, 'error') %> prohibited this book from being saved:</h2>
+
+      <ul>
+      <% book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :length %><br>
+    <%= f.text_field :length %>
+  </p>
+  <p>
+    <%= f.label :author %><br>
+    <%= f.text_field :author %>
+  </p>
+  <p>
+    <%= f.label :genre %><br>
+    <%= f.text_field :genre %>
+  </p>
+  <p>
+    <%= f.label :format %><br>
+    <%= f.select :format, %w'Audible Kindle Traditional' %>
+  </p>
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :rating %><br>
+    <%= f.select :rating, [1,2,3,4,5] %>
+  </p>
+  <p>
+    <%= f.label :started %><br>
+    <%= f.date_field :started %>
+  </p>
+  <p>
+    <%= f.label :date %><br>
+    <%= f.date_field :date %>
+  </p>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

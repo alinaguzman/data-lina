@@ -1,7 +1,7 @@
 <% @runs.each do |run| %>
   <p>
     <%= render partial: 'run', locals: {run: run} %>
-    <%= link_to 'Strava Link', run.strava %> <br>
+    <%= link_to 'Strava Link', run.strava %> |
     <%= link_to 'Edit', edit_run_path(run) %> |
     <%= link_to 'Destroy',  { action: :destroy, id: run.id }, method: :delete %>
   </p>

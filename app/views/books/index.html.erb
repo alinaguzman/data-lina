@@ -1,0 +1,12 @@
+<% @books.each do |book| %>
+  <p>
+    <%= render partial: 'book', locals: {book: book} %>
+    <%= link_to 'Edit', edit_book_path(book) %> |
+    <%= link_to 'Destroy',  { action: :destroy, id: book.id }, method: :delete %>
+  </p>
+  <hr>
+<% end %>
+
+<br>
+
+<%= link_to 'New Book', new_book_path %>

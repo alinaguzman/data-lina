@@ -1,0 +1,4 @@
+<%= render partial: 'book', locals: {book: @book} %>
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Back', books_path %> |
+<%= link_to 'Destroy',  { action: :destroy, id: @book.id }, method: :delete %>
