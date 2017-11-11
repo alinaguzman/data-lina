@@ -1,0 +1,12 @@
+<% @cities.each do |city| %>
+  <p>
+    <%= render partial: 'city', locals: {city: city} %>
+    <%= link_to 'Edit', edit_city_path(city) %> |
+    <%= link_to 'Destroy',  { action: :destroy, id: city.id }, method: :delete %>
+  </p>
+  <hr>
+<% end %>
+
+<br>
+
+<%= link_to 'New City', new_city_path %>

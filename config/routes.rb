@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :wines
     resources :sales
     resources :books
+    resources :cities
   end
 
 end

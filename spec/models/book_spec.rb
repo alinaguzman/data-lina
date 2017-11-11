@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Book, type: :model do
 
-  let(:book) { described_class.new(name: 'Harry Potter', author: 'JK Rowling', format: 'Audible', date: Date.today, ) }
+  let(:book) { described_class.new(name: 'Harry Potter', author: 'JK Rowling', format: 'Audible', date: Date.today ) }
 
   it 'is valid with valid attributes' do
     expect(book).to be_valid
